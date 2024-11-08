@@ -1,0 +1,22 @@
+{% extends 'brand.html' %}
+
+{% block content %}
+
+    <div class="container mt-4">
+        <h3 class="display-6">Deletar Produto</h3>
+
+        <div class="card">
+            <div class="card-body">
+                <p class="card-text">Tem certeza que deseja excluir esse produto <strong>{{ object.title }}</strong>?</p>
+
+                <form method="post">
+                    {% crsf_token %}
+                    <button type="submit" class="btn btn-secondary mt-3">Deletar</button>
+                </form>
+                <a href="{% url 'produto_list' %}" class="btn btn-secondary mt-3">Cancelar e voltar para lista de produto</a>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}
