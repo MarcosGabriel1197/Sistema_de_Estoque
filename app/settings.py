@@ -27,7 +27,11 @@ SECRET_KEY = 'django-insecure-sc(+*2%@35k4nfr5el85!7vmqwc!-+h7o8=(4ivtl!+p$l-%i-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['sistema-de-estoque-97vz.onrender.com',]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://sistema-de-estoque-97vz.onrender.com",
+]
 
 
 # Application definition
