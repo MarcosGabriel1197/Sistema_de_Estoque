@@ -161,16 +161,3 @@ SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(days=1),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
 }
-
-import os
-from django.contrib.auth import get_user_model
-
-if os.environ.get("CREATE_SUPERUSER") == "True":
-    User = get_user_model()
-    username = os.environ.get("adm")
-    email = os.environ.get("adm@gmail.com")
-    password = os.environ.get("adm123")
-
-    if username and password:
-        if not User.objects.filter(username=username).exists():
-            User.objects.create_superuser(username, email, password)
